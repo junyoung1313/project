@@ -1,0 +1,29 @@
+@charset "EUC-KR";
+
+	#memberNav{
+		margin:0;
+		padding:0;
+		background-color: #f9f9f9;
+		border-bottom: 1px solid #dddddd;
+		height: 28px;
+		line-height: 28px;
+		text-align: right;
+	}
+	#memInnerNav{
+		margin:0 auto;
+		width: 950px;
+		height: 28px;
+		line-height: 28px;
+		font-size: 0.8em;
+	}
+	#memInnerNav > input{
+		width: 100px;
+	}
+	#loginout {
+		border-radius: 2px;
+		border:2px solid #dfdfdf;
+		background-color:#eeeeee;
+		padding:0 3px;
+		height: 25px;
+		line-height: 25px;
+	}

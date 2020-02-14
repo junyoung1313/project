@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans:beans xmlns="http://www.springframework.org/schema/mvc"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:beans="http://www.springframework.org/schema/beans"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/mvc https://www.springframework.org/schema/mvc/spring-mvc.xsd
+		http://www.springframework.org/schema/beans https://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/context https://www.springframework.org/schema/context/spring-context.xsd">
+
+
+<!-- DAO bean 생성부분 -->
+	<beans:bean id="freeBoardDAO" class="com.mypjt.portfolio.DAO.FreeBoardDAO"/>
+	<beans:bean id="memberDAO" class="com.mypjt.portfolio.DAO.MemberDAO"/>
+	<beans:bean id="memberBoardDAO" class="com.mypjt.portfolio.DAO.MemberBoardDAO"/>
+	
+	
+	
+<!-- 컨트롤러생성  DAO주입 부분 -->	
+	<beans:bean id="freeBoardCon" class="com.mypjt.portfolio.Controller.FreeBoardController">
+		<beans:property name="dao" ref="freeBoardDAO"/>
+	</beans:bean>
+	
+	<beans:bean id="memberCon" class="com.mypjt.portfolio.Controller.MemberController">
+		<beans:property name="dao" ref="memberDAO"/>	
+	</beans:bean>
+
+	<beans:bean id="memberBoardCon" class="com.mypjt.portfolio.Controller.MemberBoardController">
+		<beans:property name="dao" ref="memberBoardDAO"/>
+	</beans:bean>
+	
+	
+</beans:beans>

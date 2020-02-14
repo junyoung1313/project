@@ -1,0 +1,12 @@
+@charset "EUC-KR";
+
+#header{
+		margin: 0 auto;
+		width: 950px;
+		height: 83px;
+	}
+
+#headerLogo{
+	height: 83px;
+	width: 111px;
+}

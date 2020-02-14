@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans:beans xmlns="http://www.springframework.org/schema/mvc"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:beans="http://www.springframework.org/schema/beans"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/mvc https://www.springframework.org/schema/mvc/spring-mvc.xsd
+		http://www.springframework.org/schema/beans https://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/context https://www.springframework.org/schema/context/spring-context.xsd">
+
+	
+	<!-- 컨트롤러에서 annotation기능을 활성화 해주기위해 선언해줍니다. -->
+	<annotation-driven />
+
+	<!-- servlet에서 DAO Bean선언을 해주는 xml문서를 불러옵니다. -->
+	<beans:import resource="DAO-servlet-context.xml"/>
+	
+	<!-- view 구현시 필요한 리소스의 경로를 설정해줌. -->
+	<resources mapping="/css/**" location="/resources/css/" />
+	<resources mapping="/img/**" location="/resources/img/" />
+	<resources mapping="/js/**" location="/resources/js/" />
+
+	<!-- 서블릿에서 맵핑 되어 컨트롤러에서 처리 후 보여칠 페이지의 경로 및 확장자설정 -->
+	<beans:bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+		<beans:property name="prefix" value="/WEB-INF/views/" />
+		<beans:property name="suffix" value=".jsp" />
+	</beans:bean>
+	
+	
+	
+	
+</beans:beans>

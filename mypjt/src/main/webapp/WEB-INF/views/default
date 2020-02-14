@@ -1,0 +1,54 @@
+
+///////////////////////기본 틀///////////////////////////
+
+
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<link rel="stylesheet" href="<%=request.getContextPath() %>/css/style.css?ver=1" type="text/css">
+<title>Insert title here</title>
+</head>
+<body>
+
+	<div>
+		<jsp:include page="../memberNav.jsp"/>
+	</div>
+	<div>
+		<jsp:include page="../header.jsp"/>
+	</div>
+	<div>
+		<jsp:include page="../nav.jsp"/>
+	</div>
+	
+	
+	
+	<section>
+		<form name="freeBoardListForm">
+			<div id="wrap">
+				<p>■ 자유 게시판</p>
+				<div id="content">
+					
+
+
+
+					<a href="#"><span class="btn_naver">버튼</span></a>
+				</div>
+			</div>
+
+
+			<div id="banner"></div>
+		</form>
+	</section>
+
+
+
+	<div>
+		<jsp:include page="../footer.jsp"/>
+	</div>
+
+
+</body>
+</html>

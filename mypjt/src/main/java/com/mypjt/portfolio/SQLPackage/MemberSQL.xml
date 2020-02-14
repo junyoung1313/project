@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+    
+
+    
+<mapper namespace="MemberSQL">
+
+	<!-- 회원 가입시에 회원등록할떄 사용하는 sql문 -->
+	<insert id="MemberInsert" parameterType="MemberDTO">
+		INSERT INTO MEMBER VALUES(#{mEmail},#{mPassword},#{mNickName},SYSDATE,'N',(TO_TIMESTAMP('1000-01-01 00:00:00', 'YYYY-MM-DD HH24:MI:SS')))
+	</insert>
+	
+	<!-- 로그인할때 사용되는 sql문 -->
+	<select id="MemberLogin" parameterType="MemberDTO" resultType="MemberDTO">
+		SELECT * FROM MEMBER WHERE mEmail=#{mEmail} AND mPassword=#{mPassword}
+	</select>
+	
+	<!-- 회원의 정보를 조회하는 sql문 -->
+	<select id="MemberSelect" parameterType="String" resultType="MemberDTO">
+		SELECT * FROM MEMBER WHERE mEmail=#{mEmail}
+	</select>
+	
+	<!-- 회원 정보를 수정하는 sql문 -->
+	<update id="MemberUpdate" parameterType="MemberDTO">
+		UPDATE member SET mNickName=#{mNickName} WHERE mEmail=#{mEmail} and mPassword=#{mPassword}
+	</update>
+	
+	<!-- 회원탈퇴할때 사용되는 sql문 -->
+	<update id="MemberDelete" parameterType="MemberDTO">
+		UPDATE member SET mIsDelete='Y',mDeleteDate=SYSDATE WHERE mEmail=#{mEmail} and mPassword=#{mPassword}
+	</update>
+	
+	<!-- 회원의 탈퇴 여부를 확인하는 sql문 -->
+	<select id="MemberIsSelect" resultType="int" parameterType="MemberDTO">
+		SELECT COUNT(*) FROM MEMBER WHERE  mEmail=#{mEmail} AND mPassword=#{mPassword} AND mIsDelete='N'
+	</select>
+	
+	<!-- 비밀번호 변경시에사용하는 sql문 -->
+	<update id="MemberPWChange" parameterType="MemberDTO">
+		UPDATE MEMBER SET mPassword=#{mPassword} WHERE mEmail=#{mEmail} 
+	</update>
+	
+	<!-- 회원가입시에 중복확인할때 사용되는 sql문 -->
+	<select id="checkEmail" parameterType="String" resultType="int">
+		select count(*) from member where mEmail=#{mEail}
+	</select>
+	
+	<!-- 회원가입, 닉네임 수정시에 닉네임을 중복확인하는 sql문 -->
+	<select id="checkNickname" parameterType="String" resultType="int">
+		select count(*) from member where mNickname=#{mNickname}
+	</select>
+	
+	<!-- 회원정보 변경시에 사용되는 비밀번호확인 sql문 -->
+	<select id="checkPassword" parameterType="MemberDTO" resultType="int">
+		select count(*) from member where mEmail=#{mEmail} and mPassword=#{mPassword}
+	</select>
+</mapper>

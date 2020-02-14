@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+    
+<mapper namespace="FreeBoardSQL">
+	
+	<!-- 자유게시판 list조회 sql문 -->
+	<select id="FreeBoardList" resultType="FreeBoardDTO" parameterType="int">
+		select * from(
+			SELECT rownum as rnum,bNum,bName, bTitle, bPassword, bContent, bDate,bHit, bGroup, bStep,bIndent, bGood,bDel,bDelDate, bModi, bModifyDate 
+  		FROM (SELECT * FROM FREEBOARD where bDel='N' ORDER BY BGROUP DESC,BSTEP ASC))where rnum <![CDATA[<= ]]> #{pageNum}*10 and rnum<![CDATA[>]]> #{pageNum}*10-10 order by rnum asc
+	</select>
+	
+	<!-- 자유게시판 게시글 생성 sql문 -->
+	<insert id="FreeBoardInsert" parameterType="FreeBoardDTO">
+		INSERT INTO FREEBOARD
+		VALUES(FREEBOARD_SEQ.NEXTVAL,#{bName},#{bPassword},#{bTitle},#{bContent},sysdate,0,FREEBOARD_SEQ.CURRVAL,0,0,0,'N',(TO_TIMESTAMP('1000-01-01 00:00:00', 'YYYY-MM-DD HH24:MI:SS')),'N',(TO_TIMESTAMP('1000-01-01 00:00:00', 'YYYY-MM-DD HH24:MI:SS')))
+	</insert>
+	<!-- 자유게시판 게시물 조회 sql문 -->
+	<select id="FreeBoardView" resultType="FreeBoardDTO" parameterType="int">
+		SELECT * FROM FREEBOARD WHERE bNum=#{bNum}
+	</select>
+	
+	<!-- 자유게시만 삭제 sql문 -->
+	<update id="FreeBoardDelete" parameterType="int">
+		UPDATE FREEBOARD SET bDel='Y',bDelDate=SYSDATE WHERE bNum=#{bNum}
+	</update>
+	
+	<!-- 자유게시판 수정 sql문 -->
+	<update id="FreeBoardModify" parameterType="FreeBoardDTO">
+		UPDATE FREEBOARD SET bModi='Y',bModifyDate=SYSDATE,bName=#{bName},bTitle=#{bTitle},bContent=#{bContent} WHERE bNum=#{bNum}
+	</update>
+	
+	<!-- 자유게시만 답글 생성 sql문 -->
+	<insert id="FreeBoardReply" parameterType="FreeBoardDTO">
+		INSERT INTO FREEBOARD
+			VALUES(BOARD_SEQ.NEXTVAL,#{bName},#{bPassword},#{bTitle},#{bContent},SYSDATE,0,#{bGroup},#{bStep}+1,#{bIndent}+1,0,'N',(TO_TIMESTAMP('1000-01-01 00:00:00', 'YYYY-MM-DD HH24:MI:SS')),'N',(TO_TIMESTAMP('1000-01-01 00:00:00', 'YYYY-MM-DD HH24:MI:SS')))
+	</insert>
+	
+	<!-- 자유게시판 답글 생성시 기존 답글의 step증가 sql문 -->
+	<update id="ReplyShape" parameterType="FreeBoardDTO">
+		UPDATE FREEBOARD SET bStep = bStep + 1 where bGroup = #{bGroup} and bStep > #{bStep}
+	</update>
+		
+	<!-- 자유게시만 게시물 조회시 사용되는 조회수 증가 sql문 -->
+	<update id="HitUp" parameterType="int">
+		UPDATE FREEBOARD SET bHit=bHit+1 where bNum = #{bNum}
+	</update>
+	
+	<!-- 자유게시판 게시물의 총 갯수를 조회하는 sql문 -->
+	<select id="GetMax" resultType="int">
+		select COUNT(bNum) from freeBoard
+	</select>
+	
+	<!-- 자유게시판 게시물 삭제시에 비밀번호의 동일 여부를 확인하는 sql문 -->
+	<select id="pwServerCheck" parameterType="FreeBoardDTO" resultType="int">
+		select count(*) from freeBoard where bNum=#{bNum} and bPassword=#{bPassword}
+	</select>
+
+</mapper>

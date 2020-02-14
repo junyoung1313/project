@@ -1,0 +1,81 @@
+create table freeboard(
+bNum number,
+bName varchar2(200),
+bPassword varchar2(200),
+bTitle varchar2(200),
+bContent varchar2(200),
+bDate timestamp,
+bHit number,
+bGroup number,
+bStep number,
+bIndent number,
+bGood number,
+bDel varchar2(1),
+bDelDate timestamp,
+bModi varchar2(1),
+bModifyDate timestamp
+);
+
+create SEQUENCE freeboard_seq;
+
+INSERT INTO FREEBOARD	VALUES(FREEBOARD_SEQ.NEXTVAL,'이름','1234','제목','내용',sysdate,0,FREEBOARD_SEQ.CURRVAL,0,0,0,'N',(TO_TIMESTAMP('1000-01-01 00:00:00', 'YYYY-MM-DD HH24:MI:SS')),'N',(TO_TIMESTAMP('1000-01-01 00:00:00', 'YYYY-MM-DD HH24:MI:SS')));
+INSERT INTO FREEBOARD	VALUES(FREEBOARD_SEQ.NEXTVAL,'이름2','1234','제목','내용',sysdate,0,FREEBOARD_SEQ.CURRVAL,0,0,0,'N',(TO_TIMESTAMP('1000-01-01 00:00:00', 'YYYY-MM-DD HH24:MI:SS')),'N',(TO_TIMESTAMP('1000-01-01 00:00:00', 'YYYY-MM-DD HH24:MI:SS')));
+INSERT INTO FREEBOARD	VALUES(FREEBOARD_SEQ.NEXTVAL,'이름3','1234','제목','내용',sysdate,0,FREEBOARD_SEQ.CURRVAL,0,0,0,'N',(TO_TIMESTAMP('1000-01-01 00:00:00', 'YYYY-MM-DD HH24:MI:SS')),'N',(TO_TIMESTAMP('1000-01-01 00:00:00', 'YYYY-MM-DD HH24:MI:SS')));
+INSERT INTO FREEBOARD	VALUES(FREEBOARD_SEQ.NEXTVAL,'이름4','1234','제목','내용',sysdate,0,FREEBOARD_SEQ.CURRVAL,0,0,0,'N',(TO_TIMESTAMP('1000-01-01 00:00:00', 'YYYY-MM-DD HH24:MI:SS')),'N',(TO_TIMESTAMP('1000-01-01 00:00:00', 'YYYY-MM-DD HH24:MI:SS')));
+INSERT INTO FREEBOARD	VALUES(FREEBOARD_SEQ.NEXTVAL,'이름5','1234','제목','내용',sysdate,0,FREEBOARD_SEQ.CURRVAL,0,0,0,'N',(TO_TIMESTAMP('1000-01-01 00:00:00', 'YYYY-MM-DD HH24:MI:SS')),'N',(TO_TIMESTAMP('1000-01-01 00:00:00', 'YYYY-MM-DD HH24:MI:SS')));
+INSERT INTO FREEBOARD	VALUES(FREEBOARD_SEQ.NEXTVAL,'이름6','1234','제목','내용',sysdate,0,FREEBOARD_SEQ.CURRVAL,0,0,0,'N',(TO_TIMESTAMP('1000-01-01 00:00:00', 'YYYY-MM-DD HH24:MI:SS')),'N',(TO_TIMESTAMP('1000-01-01 00:00:00', 'YYYY-MM-DD HH24:MI:SS')));
+INSERT INTO FREEBOARD	VALUES(FREEBOARD_SEQ.NEXTVAL,'이름7','1234','제목','내용',sysdate,0,FREEBOARD_SEQ.CURRVAL,0,0,0,'N',(TO_TIMESTAMP('1000-01-01 00:00:00', 'YYYY-MM-DD HH24:MI:SS')),'N',(TO_TIMESTAMP('1000-01-01 00:00:00', 'YYYY-MM-DD HH24:MI:SS')));
+INSERT INTO FREEBOARD	VALUES(FREEBOARD_SEQ.NEXTVAL,'이름8','1234','제목','내용',sysdate,0,FREEBOARD_SEQ.CURRVAL,0,0,0,'N',(TO_TIMESTAMP('1000-01-01 00:00:00', 'YYYY-MM-DD HH24:MI:SS')),'N',(TO_TIMESTAMP('1000-01-01 00:00:00', 'YYYY-MM-DD HH24:MI:SS')));
+INSERT INTO FREEBOARD	VALUES(FREEBOARD_SEQ.NEXTVAL,'이름9','1234','제목','내용',sysdate,0,FREEBOARD_SEQ.CURRVAL,0,0,0,'N',(TO_TIMESTAMP('1000-01-01 00:00:00', 'YYYY-MM-DD HH24:MI:SS')),'N',(TO_TIMESTAMP('1000-01-01 00:00:00', 'YYYY-MM-DD HH24:MI:SS')));
+INSERT INTO FREEBOARD	VALUES(FREEBOARD_SEQ.NEXTVAL,'이름0','1234','제목','내용',sysdate,0,FREEBOARD_SEQ.CURRVAL,0,0,0,'N',(TO_TIMESTAMP('1000-01-01 00:00:00', 'YYYY-MM-DD HH24:MI:SS')),'N',(TO_TIMESTAMP('1000-01-01 00:00:00', 'YYYY-MM-DD HH24:MI:SS')));
+INSERT INTO FREEBOARD	VALUES(FREEBOARD_SEQ.NEXTVAL,'이름45','1234','제목','내용',sysdate,0,FREEBOARD_SEQ.CURRVAL,0,0,0,'N',(TO_TIMESTAMP('1000-01-01 00:00:00', 'YYYY-MM-DD HH24:MI:SS')),'N',(TO_TIMESTAMP('1000-01-01 00:00:00', 'YYYY-MM-DD HH24:MI:SS')));
+INSERT INTO FREEBOARD	VALUES(FREEBOARD_SEQ.NEXTVAL,'이름5','1234','제목','내용',sysdate,0,FREEBOARD_SEQ.CURRVAL,0,0,0,'N',(TO_TIMESTAMP('1000-01-01 00:00:00', 'YYYY-MM-DD HH24:MI:SS')),'N',(TO_TIMESTAMP('1000-01-01 00:00:00', 'YYYY-MM-DD HH24:MI:SS')));
+INSERT INTO FREEBOARD	VALUES(FREEBOARD_SEQ.NEXTVAL,'이름7457','1234','제목','내용',sysdate,0,FREEBOARD_SEQ.CURRVAL,0,0,0,'N',(TO_TIMESTAMP('1000-01-01 00:00:00', 'YYYY-MM-DD HH24:MI:SS')),'N',(TO_TIMESTAMP('1000-01-01 00:00:00', 'YYYY-MM-DD HH24:MI:SS')));
+INSERT INTO FREEBOARD	VALUES(FREEBOARD_SEQ.NEXTVAL,'이름454','1234','제목','내용',sysdate,0,FREEBOARD_SEQ.CURRVAL,0,0,0,'N',(TO_TIMESTAMP('1000-01-01 00:00:00', 'YYYY-MM-DD HH24:MI:SS')),'N',(TO_TIMESTAMP('1000-01-01 00:00:00', 'YYYY-MM-DD HH24:MI:SS')));
+INSERT INTO FREEBOARD	VALUES(FREEBOARD_SEQ.NEXTVAL,'이름34','1234','제목','내용',sysdate,0,FREEBOARD_SEQ.CURRVAL,0,0,0,'N',(TO_TIMESTAMP('1000-01-01 00:00:00', 'YYYY-MM-DD HH24:MI:SS')),'N',(TO_TIMESTAMP('1000-01-01 00:00:00', 'YYYY-MM-DD HH24:MI:SS')));
+
+
+
+create table member(
+  mEmail varchar2(30),
+  mPassword varchar2(12),
+  mNickName varchar2(20),
+  mJoinDate timestamp,
+  mIsDelete varchar2(1),
+  mDeleteDate timestamp
+);
+
+
+create table memberBoard(
+  mbNum number,
+  mEmail varchar2(30),
+  mNickName varchar2(20),
+  mbTitle varchar2(200),
+  mbContent varchar2(200),
+  mbDate timestamp,
+  mbHit number,
+  mbGoods number,
+  mbIsModify varchar2(1),
+  mbModifyDate timestamp,
+  mbIsDelete varchar2(1),
+  mbDeleteDate TIMESTAMP
+);
+
+create SEQUENCE memberBoard_SEQ;
+
+
+insert into memberBoard values(memberBoard_SEQ.NEXTVAL,'jun','관리자14','제모옥','내용',sysdate,0,0,'N',(TO_TIMESTAMP('1000-01-01 00:00:00', 'YYYY-MM-DD HH24:MI:SS')),'N',(TO_TIMESTAMP('1000-01-01 00:00:00', 'YYYY-MM-DD HH24:MI:SS')));
+insert into memberBoard values(memberBoard_SEQ.NEXTVAL,'jun','관리자14','제모옥','내용',sysdate,0,0,'N',(TO_TIMESTAMP('1000-01-01 00:00:00', 'YYYY-MM-DD HH24:MI:SS')),'N',(TO_TIMESTAMP('1000-01-01 00:00:00', 'YYYY-MM-DD HH24:MI:SS')));
+insert into memberBoard values(memberBoard_SEQ.NEXTVAL,'jun','관리자14','제모옥','내용',sysdate,0,0,'N',(TO_TIMESTAMP('1000-01-01 00:00:00', 'YYYY-MM-DD HH24:MI:SS')),'N',(TO_TIMESTAMP('1000-01-01 00:00:00', 'YYYY-MM-DD HH24:MI:SS')));
+insert into memberBoard values(memberBoard_SEQ.NEXTVAL,'jun','관리자14','제모옥','내용',sysdate,0,0,'N',(TO_TIMESTAMP('1000-01-01 00:00:00', 'YYYY-MM-DD HH24:MI:SS')),'N',(TO_TIMESTAMP('1000-01-01 00:00:00', 'YYYY-MM-DD HH24:MI:SS')));
+insert into memberBoard values(memberBoard_SEQ.NEXTVAL,'jun','관리자14','제모옥','내용',sysdate,0,0,'N',(TO_TIMESTAMP('1000-01-01 00:00:00', 'YYYY-MM-DD HH24:MI:SS')),'N',(TO_TIMESTAMP('1000-01-01 00:00:00', 'YYYY-MM-DD HH24:MI:SS')));
+insert into memberBoard values(memberBoard_SEQ.NEXTVAL,'jun','관리자14','제모옥','내용',sysdate,0,0,'N',(TO_TIMESTAMP('1000-01-01 00:00:00', 'YYYY-MM-DD HH24:MI:SS')),'N',(TO_TIMESTAMP('1000-01-01 00:00:00', 'YYYY-MM-DD HH24:MI:SS')));
+insert into memberBoard values(memberBoard_SEQ.NEXTVAL,'jun','관리자14','제모옥','내용',sysdate,0,0,'N',(TO_TIMESTAMP('1000-01-01 00:00:00', 'YYYY-MM-DD HH24:MI:SS')),'N',(TO_TIMESTAMP('1000-01-01 00:00:00', 'YYYY-MM-DD HH24:MI:SS')));
+insert into memberBoard values(memberBoard_SEQ.NEXTVAL,'jun','관리자14','제모옥','내용',sysdate,0,0,'N',(TO_TIMESTAMP('1000-01-01 00:00:00', 'YYYY-MM-DD HH24:MI:SS')),'N',(TO_TIMESTAMP('1000-01-01 00:00:00', 'YYYY-MM-DD HH24:MI:SS')));
+insert into memberBoard values(memberBoard_SEQ.NEXTVAL,'jun','관리자14','제모옥','내용',sysdate,0,0,'N',(TO_TIMESTAMP('1000-01-01 00:00:00', 'YYYY-MM-DD HH24:MI:SS')),'N',(TO_TIMESTAMP('1000-01-01 00:00:00', 'YYYY-MM-DD HH24:MI:SS')));
+insert into memberBoard values(memberBoard_SEQ.NEXTVAL,'jun','관리자14','제모옥','내용',sysdate,0,0,'N',(TO_TIMESTAMP('1000-01-01 00:00:00', 'YYYY-MM-DD HH24:MI:SS')),'N',(TO_TIMESTAMP('1000-01-01 00:00:00', 'YYYY-MM-DD HH24:MI:SS')));
+insert into memberBoard values(memberBoard_SEQ.NEXTVAL,'jun','관리자14','제모옥','내용',sysdate,0,0,'N',(TO_TIMESTAMP('1000-01-01 00:00:00', 'YYYY-MM-DD HH24:MI:SS')),'N',(TO_TIMESTAMP('1000-01-01 00:00:00', 'YYYY-MM-DD HH24:MI:SS')));
+insert into memberBoard values(memberBoard_SEQ.NEXTVAL,'jun','관리자14','제모옥','내용',sysdate,0,0,'N',(TO_TIMESTAMP('1000-01-01 00:00:00', 'YYYY-MM-DD HH24:MI:SS')),'N',(TO_TIMESTAMP('1000-01-01 00:00:00', 'YYYY-MM-DD HH24:MI:SS')));
+insert into memberBoard values(memberBoard_SEQ.NEXTVAL,'jun','관리자14','제모옥','내용',sysdate,0,0,'N',(TO_TIMESTAMP('1000-01-01 00:00:00', 'YYYY-MM-DD HH24:MI:SS')),'N',(TO_TIMESTAMP('1000-01-01 00:00:00', 'YYYY-MM-DD HH24:MI:SS')));
+insert into memberBoard values(memberBoard_SEQ.NEXTVAL,'jun','관리자14','제모옥','내용',sysdate,0,0,'N',(TO_TIMESTAMP('1000-01-01 00:00:00', 'YYYY-MM-DD HH24:MI:SS')),'N',(TO_TIMESTAMP('1000-01-01 00:00:00', 'YYYY-MM-DD HH24:MI:SS')));
+

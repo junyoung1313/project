@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE configuration     
+    PUBLIC "-//mybatis.org//DTD config 3.0//EN"      
+    "http://mybatis.org/dtd/mybatis-3-config.dtd">
+
+<configuration>
+   	<!-- DataBase 정보를 담고 있는 properties의 경로를 잡는다/ -->
+   	<properties resource="com/mypjt/portfolio/DataBase/DataBaseInfo.properties"/>
+    
+    <!-- DTO 를 쓰기 편하게 xml에서 적용되는 이름을 지정해주는 것.  -->
+   	<typeAliases>
+   		  <typeAlias alias="FreeBoardDTO" type="com.mypjt.portfolio.DTO.FreeBoardDTO"/>
+   		  <typeAlias alias="MemberDTO" type="com.mypjt.portfolio.DTO.MemberDTO"/>
+   		  <typeAlias alias="MemberBoardDTO" type="com.mypjt.portfolio.DTO.MemberBoardDTO"/>
+   	</typeAliases>
+    
+    <!-- 데이터베이스의 사용목적을 정하며 DB의 정보를 표현하는 곳 현재는 properties에서 참조해와서 사용하고 있다. -->
+   	<environments default="Development">
+   		<environment id="Development">
+   			<transactionManager type="JDBC"/>
+    			
+   			<dataSource type="POOLED">
+   				<property name="driver" value="${driver}"/>
+   				<property name="url" value="${url}"/>
+   				<property name="username" value="${username}"/>
+   				<property name="password" value="${password}"/>
+   			</dataSource>
+   		</environment>
+	</environments>
+
+	<!-- SQL 정보가 들어가 있는 xml의 위치가 표시될 곳 -->
+	<mappers>
+		<mapper resource="com/mypjt/portfolio/SQLPackage/FreeBoardSQL.xml"/>
+		<mapper resource="com/mypjt/portfolio/SQLPackage/MemberSQL.xml"/>
+		<mapper resource="com/mypjt/portfolio/SQLPackage/MemberBoardSQL.xml"/>  <!-- Board 및 게시판에 관련된 부분을 집어넣을 생각 -->
+	</mappers> 
+</configuration>

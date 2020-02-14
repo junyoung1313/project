@@ -1,0 +1,171 @@
+@charset "EUC-KR";
+
+	#bName{
+		width: 100px;
+	}
+	#bTitle{
+		width: 556px;
+	}
+	.fbinput{
+		margin-left: 20px;
+		margin-top: 30px;
+	}
+
+	.inline {
+		margin: 0 auto;
+		width: 660px;
+		height: 33px;
+		overflow: hidden;
+	}
+	
+	.inOb {
+		line-height: 25px;
+		margin: 0 1px;
+		float: left;
+		border-right: 1px dashed #aaaaaa;
+		text-align: center;
+		font-size: 0.8em;
+	}
+	
+	.inline>div:nth-child(1) {
+		text-align: left;
+		text-indent: 10px;
+		width: 440px;
+	}
+	
+	
+	.inline>div:nth-child(2) {
+		width: 50px;
+	}
+	
+	.inline>div:nth-child(3) {
+		width: 60px;
+	}
+	
+	.inline>div:nth-child(4) {
+		width: 45px;
+	}
+	
+	.inline>div:nth-child(5) {
+		border: 0px;
+		width: 45px;
+	}
+	#outline {
+		margin: 30px auto;
+		width: 666px;
+		height: 390px;
+		overflow: hidden;
+	}
+	#content textarea{
+		margin-left: 20px;
+		margin-top: 30px;
+		height: 298px;
+		width: 638px;
+		resize: none;
+		padding: 20px;
+	}
+	#outline>.inline:nth-child(1)>div:nth-child(1) {
+		text-align: center;
+	}
+	.inline {
+		margin: 0 auto;
+		width: 660px;
+		height: 33px;
+		overflow: hidden;
+	}
+	
+	.inOb {
+		line-height: 25px;
+		margin: 0 1px;
+		float: left;
+		border-right: 1px dashed #aaaaaa;
+		text-align: center;
+		font-size: 0.8em;
+	}
+	#pageNum {
+		width: 666px;
+		height: 20px;
+		text-align: center;
+		margin: 0 auto;
+	}
+	
+	.prenext{
+		width:50px;
+		float: left;
+	}
+	#pageNumber{
+		width:250px;
+		float: left;
+	}
+	#pagewrap{
+		width: 350px;
+		margin: 0 auto;
+	}
+	#fbTitle{
+		float: left;
+		margin-left:20px;
+		font-size: 1.4em;
+		margin-bottom: 10px;
+	}
+	#fbDate{
+		float: right;
+		line-height: 36.8px;
+	}
+	
+	#fbName{
+		float: left;
+		margin-left:20px;
+		font-size: 0.8em;
+		margin-bottom: 10px;
+	}
+	.hgr{
+		float: right;
+		margin-left: 10px;
+		font-size: 0.8em;
+	}
+	strong{
+		font-size: 1.2em;
+	}
+
+/*------------¹öÆ°------------*/
+
+
+	.btn_naver{
+		background-color:#03cf5d;
+		text-align:center;
+		color:#ffffff;
+		font-weight:bold;
+		width:100px;
+		height:40px;
+		line-height:40px;
+		
+	}
+	
+	#fbfixbtn{
+		bottom: 30px;
+		right:30px;
+		position: absolute;
+	}
+
+	#fbContent{
+		margin:0 auto;
+		height: 298px;
+		width: 638px;
+	}
+	#fbDelete{
+		bottom: 30px;
+		right:250px;
+		position: absolute;
+	}
+	#fbModify{
+		bottom: 30px;
+		right:140px;
+		position: absolute;
+	}
+	
+	
+	#memfixbtn{
+		bottom: 30px;
+		right:313px;
+		position: absolute;
+	}

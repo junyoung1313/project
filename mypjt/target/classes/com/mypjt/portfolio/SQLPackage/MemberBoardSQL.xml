@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="MemberBoardSQL">
+
+	<!-- 회원게시판의 게시물을 등록할때 사용하는 sql문 -->
+	<insert id="MemberBoardWrite" parameterType="MemberBoardDTO">
+		insert into memberBoard values(memberBoard_SEQ.NEXTVAL,#{mEmail},#{mNickName},#{mbTitle},#{mbContent},sysdate,0,0,'N',(TO_TIMESTAMP('1000-01-01 00:00:00', 'YYYY-MM-DD HH24:MI:SS')),'N',(TO_TIMESTAMP('1000-01-01 00:00:00', 'YYYY-MM-DD HH24:MI:SS')))
+	</insert>
+	
+	<!-- 회원게시판의 게시물들을 조회하는 sql문 -->
+	<select id="MemberBoardList" resultType="MemberBoardDTO" parameterType="int">
+		select * from(
+			SELECT rownum as rnum,mbNum,mEmail,mNickName,mbTitle, mbContent, mbDate,mbHit,mbGoods,mbismodify,mbmodifydate,mbisdelete,mbdeletedate 
+  				FROM(select * from memberBoard where mbIsdelete='N' order by mbnum desc))where rnum<![CDATA[<= ]]> #{pageNum}*10 and rnum<![CDATA[>]]> #{pageNum}*10-10
+	</select>
+	
+	<!-- 회원 게시판의 게시물의 총 갯수를 조회하는 sql문 -->
+	<select id="GetMax" resultType="int">
+		select COUNT(mbNum) from memberBoard
+	</select>
+	
+	<!-- 회원게시판의 게시물을 조회하는 sql문 -->
+	<select id="MemberBoardView" parameterType="int" resultType="MemberBoardDTO">
+		select * from memberBoard where mbNum=#{mbNum}
+	</select>
+	
+	<!-- 회원게시판의 게시물을 수정할떄 사용하는 sql문 -->
+	<update id="MemberBoardModify" parameterType="MemberBoardDTO">
+		update memberBoard set mbTitle=#{mbTitle},mbContent=#{mbContent},mbIsModify='Y',mbModifyDate=sysdate where mbNum=#{mbNum}
+	</update>
+	
+	<!-- 회원게시판의 게시물을 삭제할떄 사용하는 sql문 -->
+	<update id="MemberBoardDelete" parameterType="int">
+		update memberBoard set mbIsDelete='Y',mbDeleteDate=sysdate where mbNum=#{mbNum}
+	</update>
+	
+</mapper>
