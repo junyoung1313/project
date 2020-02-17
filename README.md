@@ -4,12 +4,12 @@
 ### 1. 개발환경
 
 * 사용 언어
-	* java, Javascript, JQuery, HTML&CSS, Ajax, Oracle DB, Mybatis, Spring Framework
+	* java, Javascript, JQuery, HTML&CSS, Ajax, Oracle DB, ibatis, Spring Framework
 
 * 언어 습득 및 개발 일정
-	* java, html, Oracle DB, Mybatis, Spring FrameWork
+	* java, html, Oracle DB, ibatis, Spring FrameWork
 		>2019년 11월 10일 ~ 2020년 1월 2일
-		> 유튜브를 이용하여 java 및 html, DataBase, Mybatis, Spring FrameWork를 공부 후 mvc패턴의 게시판 제작
+		> 유튜브를 이용하여 java 및 html, DataBase, ibatis, Spring FrameWork를 공부 후 mvc패턴의 게시판 제작
 	* javascript, HTML&CSS
 		>2020년 1월 2일 ~ 2020년 1월 18일
 		>javascript를 이용하여 게시판의 페이지 이동 및 페이지간 데이터전달을 할 수 있도록 수정하였습니다.
